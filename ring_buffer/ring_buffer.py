@@ -2,15 +2,18 @@ class RingBuffer:
     def __init__(self, capacity):
         self.queue = []
         self.capacity = capacity
-        self.indexOfOldestItem = 0
+        self.indexToOverwrite = 0
 
     def append(self, item):
-        if len(self.queue) < self.capacity:
+        queueSize = len(self.queue)
+        if queueSize < self.capacity:
             self.queue.append(item)
         else:
-            self.queue[self.indexOfOldestItem] = item
-            shouldReset = True if self.indexOfOldestItem == self.capacity else False
-            self.indexOfOldestItem = 0 if shouldReset else self.indexOfOldestItem + 1
+            self.queue[self.indexToOverwrite] = item
+            self.indexToOverwrite += 1
+
+        if self.indexToOverwrite == self.capacity:
+            self.indexToOverwrite = 0
 
     def get(self):
         return self.queue
