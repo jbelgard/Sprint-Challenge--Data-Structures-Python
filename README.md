@@ -4,6 +4,9 @@ In this week's Sprint you implemented some classic and fundamental data structur
 
 ## Instructions
 
+
+
+
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
 This is an individual assessment. All work must be your own. Your Challenge score is a measure of your ability to work independently using the material covered throughout this sprint. You need to demonstrate proficiency in the concepts and objectives that were introduced and that you practiced in the preceding days.
