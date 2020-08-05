@@ -1,9 +1,19 @@
 class RingBuffer:
     def __init__(self, capacity):
-        pass
+        self.queue = []
+        self.capacity = capacity
+        self.indexToOverwrite = 0
 
     def append(self, item):
-        pass
+        queueSize = len(self.queue)
+        if queueSize < self.capacity:
+            self.queue.append(item)
+        else:
+            self.queue[self.indexToOverwrite] = item
+            self.indexToOverwrite += 1
+
+        if self.indexToOverwrite == self.capacity:
+            self.indexToOverwrite = 0
 
     def get(self):
-        pass
+        return self.queue
